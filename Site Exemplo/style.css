@@ -1,10 +1,9 @@
-
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0px 20px;;
+    background-color: rgba(214, 214, 214, 0.712);
 }
 
 header nav ul {
@@ -18,7 +17,48 @@ header nav ul li {
 
 #box {
     margin: auto;
-    display: flex;
     align-items: center;
     width: 70%;
+    margin-bottom: 0px;
+}
+
+#box h1 {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+
+#box1 {
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;;
+}
+
+#container {
+    display: flex;
+}
+
+#sidebar {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#content {
+    padding: 0px 20px;
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(100, 100, 100);
+    min-height: 7vh;
+    align-content: center;
 }
