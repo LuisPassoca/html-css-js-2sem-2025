@@ -1,0 +1,28 @@
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    min-width: fit-content;
+    max-width: 150px;
+    padding: 20px;
+    background-color: rgb(224, 224, 224);
+    text-align: center;
+    flex-grow: 1;
+
+    ul, h4 {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+main {
+    margin: 20px;
+    max-width: 900px;
+    text-align: justify;
+    text-justify: inter-word;
+    min-height: 485px;
+}

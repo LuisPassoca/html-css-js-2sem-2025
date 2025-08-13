@@ -1,8 +1,3 @@
-html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -19,40 +14,8 @@ header {
 }
 }
 
-section {
-    margin: 10px 0px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    background-color: rgb(224, 224, 224);
-
-}
-
-#img-txt-subtxt {
-    align-content: center;
-
-    h1 {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    font-size: 3rem;
-}
-    h2 {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    }
-}
-
-.img {
-    width: 256px;
-    background-color: rgb(90, 90, 90);
-    aspect-ratio: 1 / 1;
-    border-radius: 10px;
-}
-
 footer {
     height: 17vh;
-    margin-top: 10px;
     padding: 0px 30px;
     align-items: center;
     background-color: rgb(197, 197, 197);
