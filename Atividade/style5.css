@@ -4,14 +4,14 @@ header {
     align-items: center;
     padding: 0px 20px;
     background-color: rgb(197, 197, 197);
-}
 
-header ul {
+    ul {
     overflow: hidden;
     list-style: none;
     display: flex;
     gap: 20px;
   
+}
 }
 
 section {
@@ -24,34 +24,52 @@ section {
 
 }
 
-section h1 {
-    font-size: 3rem;
-}
-
 #img-txt-subtxt {
     align-content: center;
+
+    h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    font-size: 3rem;
+}
+    h2 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    }
 }
 
 .img {
     width: 256px;
-    height: 256px;
     background-color: rgb(90, 90, 90);
-}
-
-#img-txt-subtxt h1 {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-}
-
-#img-txt-subtxt h2 {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    aspect-ratio: 1 / 1;
 }
 
 footer {
     height: 17vh;
     margin-top: 10px;
-    padding: 20px;
-    text-align: center;
+    padding: 0px 30px;
+    align-items: center;
     background-color: rgb(197, 197, 197);
+    display: flex;
+    justify-content: space-between;
+
+
+    nav {
+        justify-content: left;
+    }
+
+    h4, ul {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        list-style: none;
+        padding: 0px;
+    }
+
+    #social {
+        text-align: center;
+
+        svg {
+            margin: 0px 5px;
+    }
+
 }
