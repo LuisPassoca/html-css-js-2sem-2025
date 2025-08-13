@@ -1,0 +1,47 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgb(197, 197, 197);
+}
+
+header ul {
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  
+}
+
+section {
+    margin: 10px 0px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color: rgb(224, 224, 224);
+
+}
+
+aside {
+    width: 20%;
+    padding: 20px;
+    background-color: rgb(224, 224, 224);
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+
+
+
+footer {
+    height: 17vh;
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(197, 197, 197);
+}

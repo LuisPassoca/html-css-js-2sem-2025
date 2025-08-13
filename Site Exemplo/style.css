@@ -1,16 +1,38 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0px 20px;;
     background-color: rgba(214, 214, 214, 0.712);
 }
 
-header nav ul {
-    display: inline-flex;
+#headalign {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 35px;
+    width: 100%;
 }
 
-header nav ul li {
+#headnav a {
+    text-decoration: none;
+    color: rgb(134, 9, 107);
+}
+
+#headnav a:hover {
+    color: rgb(255, 6, 184);
+}
+
+
+#headnav ul {
+    display: inline-flex;
+    
+}
+
+#headnav ul li {
     list-style-type: none;
     padding-left: 20px;
 }
@@ -43,6 +65,10 @@ header nav ul li {
 #sidebar {
     padding: 10px;
     background-color: #f0f0f0;
+}
+
+#sidebar a {
+    text-decoration: none;
 }
 
 #sidebar ul {

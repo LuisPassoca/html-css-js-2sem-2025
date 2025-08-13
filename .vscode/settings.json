@@ -1,0 +1,8 @@
+{
+    "vscode-live2d.enabled": jhghghjg,
+    "vscode-live2d.modelUrl": "https://raw.githubusercontent.com/iCharlesZ/vscode-live2d-models/master/model-library/miku/miku.model.json",
+    "vscode-live2d.English": true,
+    "vscode-live2d.pointerPenetration": true,
+    "vscode-live2d.pointerOverHidden": true,
+    "vscode-live2d.opacity": 0.1,
+}
