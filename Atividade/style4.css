@@ -1,5 +1,5 @@
-body {
-    min-height: 100vh;
+#wrapper {
+    display: flex;
 }
 
 header {
@@ -37,7 +37,6 @@ main {
 aside {
     max-width: 150px;
     min-width: 100px;
-    padding: 20px;
     background-color: rgb(224, 224, 224);
     text-align: center;
 
@@ -45,10 +44,6 @@ aside {
         list-style: none;
         padding: 0;
     }
-}
-
-#wrapper {
-    display: flex;
 }
 
 footer {
