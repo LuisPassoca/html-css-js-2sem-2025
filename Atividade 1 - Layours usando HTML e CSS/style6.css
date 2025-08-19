@@ -3,32 +3,22 @@ body {
 }
 
 header {
+    max-width: 900px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    background-color: rgb(197, 197, 197);
 }
 
 #headerbg {
-    width: 100%;
-    justify-self: center;
-    overflow: hidden;
-    height: 80px;
-    z-index: -1;
-    position: absolute;
     background-color: rgb(197, 197, 197);
 }
 
 #footerbg {
-    width: 100%;
-    justify-self: center;
-    overflow: hidden;
-    height: 170px;
-    z-index: -1;
-    position: absolute;
     background-color: rgb(197, 197, 197);
 }
+
 
 header ul {
     overflow: hidden;
@@ -39,7 +29,7 @@ header ul {
 }
 
 #width-wrapper {
-    justify-self: center;
+    margin: auto;
     max-width: 900px;
 }
 
@@ -78,10 +68,9 @@ aside {
 }
 
 footer {
+    max-width: 900px;
+    margin: auto;
     min-height: 17vh;
-    margin: 0;
     padding: 20px;
     text-align: center;
-    background-color: rgb(197, 197, 197);
-    flex-grow: 1;
 }
