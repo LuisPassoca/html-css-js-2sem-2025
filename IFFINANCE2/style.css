@@ -1,11 +1,18 @@
+:root {
+    --accent: #2f9e41;
+    --main: #141d15;
+}
+
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
+    background-color: black;
 }
 
 .wrapper {
     all: inherit;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     flex-grow: 1;
 }
@@ -17,57 +24,87 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    color: white;
 
-    background-color: antiquewhite;
+    background-color: var(--main);
 
     ul {
         display: flex;
         list-style-type: none;
-
+        height: 100%;
     }
+
+    li {
+        box-sizing: border-box;
+        height: 100%;
+        align-content: center;
+        border-top: solid 4px transparent;
+        border-bottom: solid 4px transparent;
+    }
+
+    li:hover, .active {
+        border-bottom-color: var(--accent);
+        background-color: rgba(0, 0, 0, 0.040);
+    }
+    
 
     a {
-        padding: 20px 10px;
-    }
-
-    a:hover {
-        flex-grow: 1;
-        border-style: solid;
-        border-width: 0 0 4px 0;
+        text-decoration: none;
+        padding: 100% 10px;
     }
 }
 
 footer {
     margin-top: 10px;
     height: 120px;
-    background-color: antiquewhite;
+    background-color: var(--main);
 }
 
 .main {
     display: flex;
-    min-height: calc(100vh - 210px);
+    min-height: calc(100vh - 210px);   
+}
 
-    aside {
-        text-align: center;
-        padding: 0 10px;
-        min-width: 100px;
-        background-color: blanchedalmond;
+aside {
+    text-align: center;
+    min-width: 120px;
+
+    background-color: blanchedalmond;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
     }
 
-    main {
-        margin: 0 10px;
+    li {
+        align-content: center;
+        padding: 2px 0;
+        border-left: solid 4px transparent;
+        border-right: solid 4px transparent;
     }
+
+    li:hover, .active {
+        border-left-color: var(--accent);
+        background-color: rgba(0, 0, 0, 0.040);
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+main {
+     margin: 0 10px;
 }
 
 #cardcontainer {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: left;
 }
 
 .card {
-    
     border-radius: 10px;
     width: 160px;
     height: 100px;
