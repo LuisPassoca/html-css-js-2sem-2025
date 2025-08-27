@@ -59,8 +59,24 @@ header {
 }
 
 footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    color: white;
     height: 120px;
     background-color: var(--main);
+
+    h1, h3 {
+        margin: 0;
+    }
+}
+
+#social {
+    text-align: center;
+    
+    svg {
+        margin:  3px 5px;
+    }
 }
 
 .main {
