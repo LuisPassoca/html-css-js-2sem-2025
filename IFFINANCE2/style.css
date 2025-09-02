@@ -223,6 +223,7 @@ main {
 #ghostcard {
     aspect-ratio: 3.5 / 2.2;
     min-width: 410px;
+    height: 1px;
 }
 
 
@@ -237,7 +238,7 @@ main {
 }
     .card {
         aspect-ratio: 3.5 / 2.2;
-        min-width: 320px;
+        min-width: 375px;
 
         h1 {
             font-size: 25px;
@@ -246,9 +247,5 @@ main {
             font-size: 20px;
         }
         
-    }
-
-    #ghostcard {
-        display: none;
     }
 }
