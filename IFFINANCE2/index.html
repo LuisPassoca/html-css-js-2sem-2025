@@ -86,14 +86,14 @@
                     </div>
 
                     <div class="cmid">
-                        <h1>Valor atual: <b style="color: var(--accent);">U$ 235,00 ↑</b> </h1>
+                        <h1>Valor atual: <b style="color: var(--accent);">U$ 235.00 ↑</b> </h1>
 
-                        <h2>Valor inicial: U$200,00</h2>
+                        <h2>Valor inicial: U$200.00</h2>
                     </div>
 
                     <div class="cbot">
                         <h2>Total investido (qtd.):</h2>
-                        <h2>U$2350,00 (10x)</h2>
+                        <h2>U$2350.00 (10x)</h2>
                     </div>
 
                 </div>
@@ -105,14 +105,14 @@
                     </div>
 
                     <div class="cmid">
-                        <h1>Valor atual: <b style="color: #9e2f2f;">U$ 199,00 ↓</b> </h1>
+                        <h1>Valor atual: <b style="color: #9e2f2f;">U$ 199.00 ↓</b> </h1>
 
-                        <h2>Valor inicial: U$210,00</h2>
+                        <h2>Valor inicial: U$210.00</h2>
                     </div>
 
                     <div class="cbot">
                         <h2>Total investido (qtd.):</h2>
-                        <h2>U$1990,00 (10x)</h2>
+                        <h2>U$1990.00 (10x)</h2>
                     </div>
 
                 </div>
@@ -124,14 +124,14 @@
                     </div>
 
                     <div class="cmid">
-                        <h1>Valor atual: <b>U$ 180,00 --</b> </h1>
+                        <h1>Valor atual: <b>U$ 180.00 --</b> </h1>
 
-                        <h2>Valor inicial: U$180,00</h2>
+                        <h2>Valor inicial: U$180.00</h2>
                     </div>
 
                     <div class="cbot">
                         <h2>Total investido (qtd.):</h2>
-                        <h2>U$1800,00 (10x)</h2>
+                        <h2>U$1800.00 (10x)</h2>
                     </div>
                 
                 </div>
@@ -149,19 +149,27 @@
             <form onsubmit="addTicker(event)">
                 <label for="ticker">Ticker:</label>
                 <input type="text" id="ticker" name="ticker" placeholder="oi bebe">
+                
                 <label for="bolsa">Bolsa:</label>
                 <select id="bolsa" name="bolsa">
                     <option value="Nasdaq">Nasdaq</option>
                     <option value="NYSE">NYSE</option>
                 </select>
-                <label for="valor">Valor:</label>
+
+                <label for="valor">Valor inicial:</label>
+                <input type="text" id="valorini" name="valorini" placeholder="oi bebe">
+
+                <label for="valor">Valor atual:</label>
                 <input type="text" id="valor" name="valor" placeholder="oi bebe">
+
                 <label for="ativos">Ativos:</label>
                 <input type="text" id="ativos" name="ativos" placeholder="oi bebe">
+
                 <div id="formbtn">
                 <button type="button" onclick="openModal()">Cancelar</button>
                 <button style="background-color: var(--accent); color: white;"><b>Adicionar</b></button>
                 </div>
+                
             </form>
 
 
