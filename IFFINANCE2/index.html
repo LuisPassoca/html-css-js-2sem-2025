@@ -144,26 +144,32 @@
     </div>
 
     <div class="modal">
+
+        <div id="adderror">
+            <h3>Por favor, selecione uma bolsa válida!</h3>
+        </div>
+        
         <main>
             <h1>Adicionar um card</h1>
             <form onsubmit="addTicker(event)">
                 <label for="ticker">Ticker:</label>
-                <input type="text" id="ticker" name="ticker" placeholder="oi bebe">
+                <input type="text" id="ticker" name="ticker" placeholder="Digite o nome da ação...">
                 
                 <label for="bolsa">Bolsa:</label>
                 <select id="bolsa" name="bolsa">
+                    <option value="null">- Selecione -</option>
                     <option value="Nasdaq">Nasdaq</option>
                     <option value="NYSE">NYSE</option>
                 </select>
 
                 <label for="valor">Valor inicial:</label>
-                <input type="text" id="valorini" name="valorini" placeholder="oi bebe">
+                <input type="text" id="valorini" name="valorini" placeholder="Digite um valor em USD...">
 
                 <label for="valor">Valor atual:</label>
-                <input type="text" id="valor" name="valor" placeholder="oi bebe">
+                <input type="text" id="valor" name="valor" placeholder="Digite um valor em USD...">
 
                 <label for="ativos">Ativos:</label>
-                <input type="text" id="ativos" name="ativos" placeholder="oi bebe">
+                <input type="text" id="ativos" name="ativos" placeholder="Digite a quantidade de ações...">
 
                 <div id="formbtn">
                 <button type="button" onclick="openModal()">Cancelar</button>
@@ -175,6 +181,8 @@
 
             
         </main>
+
+        
     </div>
     
 

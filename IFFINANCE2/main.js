@@ -62,7 +62,7 @@ function addTicker(event) {
                     <div class="cmid">
                         <h1>Valor atual: <b style="color: #9e2f2f;">U$ ${valor} ↓</b> </h1>
 
-                        <h2>Valor inicial: U$210.00</h2>
+                        <h2>Valor inicial: U$${valorini}</h2>
                     </div>
         `
         }
@@ -72,7 +72,7 @@ function addTicker(event) {
                     <div class="cmid">
                         <h1>Valor atual: <b>U$ ${valor} --</b> </h1>
 
-                        <h2>Valor inicial: U$180.00</h2>
+                        <h2>Valor inicial: U$${valorini}</h2>
                     </div>
         `
         }
@@ -118,11 +118,19 @@ function addTicker(event) {
 
     const card = cardtop + cardmid + cardbot
 
+    console.log(bolsa)
 
+    if (bolsa != "null") {
     let cardlist = document.querySelector('#cardcontainer').innerHTML
     cardlist += card
 
     document.querySelector('#cardcontainer').innerHTML = cardlist
     openModal()
+    document.getElementById('adderror').style.display = 'none'
+    }
+
+    else {
+        document.getElementById('adderror').style.display = 'flex'
+    }
 }
 

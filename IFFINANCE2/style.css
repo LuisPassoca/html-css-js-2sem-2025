@@ -228,6 +228,7 @@ main {
 
 .modal {
     display: none;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -238,6 +239,7 @@ main {
 }
 
 .modal main {
+    position: absolute;
     box-sizing: border-box;
     background-color: white;
     border-radius: 15px;
@@ -279,6 +281,19 @@ form {
         padding: 7px;
         border-radius: 10px;
         border: 2px solid rgba(20, 20, 20, 0.301);
+    }
+}
+
+
+#adderror {
+    display: none;
+    margin-bottom: 550px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+
+    h3 {
+        margin: 0;
     }
 }
 
