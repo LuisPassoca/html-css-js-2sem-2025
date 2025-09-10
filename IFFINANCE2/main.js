@@ -1,4 +1,20 @@
 let open = 0
+let opencards = 0
+
+function deleteCard(event) {
+    event.target.closest('.card').remove()
+}
+
+function showBTN(event) {
+    if (opencards == 0) {
+        document.querySelector('.enx').style.display = 'flex'
+        opencards = 1
+    }
+    else {
+        document.querySelector('.enx').style.display = 'none'
+        opencards = 0
+    }
+}
 
 function openModal() {
     if (open == 0) {
@@ -41,9 +57,7 @@ function addTicker(event) {
         valorini = Number(valorini).toFixed(2)
     }
 
-
     let saldo = valor - valorini
-    console.log(saldo)
 
     if (saldo > 0) {
         saldo = "positive"
@@ -117,8 +131,6 @@ function addTicker(event) {
     `
 
     const card = cardtop + cardmid + cardbot
-
-    console.log(bolsa)
 
     if (bolsa != "null") {
     let cardlist = document.querySelector('#cardcontainer').innerHTML
