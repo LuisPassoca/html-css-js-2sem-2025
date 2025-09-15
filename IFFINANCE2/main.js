@@ -6,8 +6,7 @@ function deleteCard(event) {
     opencards = 0
 }
 
-function showBTN(event) {
-    
+function showBTN(event) { 
     if (opencards == 0) {
         event.target.querySelector('.enx').style.display = 'flex'
         opencards = 1
@@ -18,14 +17,14 @@ function showBTN(event) {
     }
 }
 
-function openModal() {
+function openModal(modalId) {
     if (open == 0) {
-        document.querySelector('.modal').style.display = 'flex'
+        document.querySelector(modalId).style.display = 'flex'
 
         open = 1
     }
     else {
-        document.querySelector('.modal').style.display = 'none'
+        document.querySelector(modalId).style.display = 'none'
         open = 0
     }
 }
@@ -97,7 +96,7 @@ function addTicker(event) {
     const card = `
                 <div class="card" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
                     <div class="ctop ${saldo}">
-                        <h2>#1. ${ticker}</h2>
+                        <h2>#1. <span class="cticker">${ticker}</span></h2>
                             <h2> ${bolsa}</h2>
                     </div>
 
@@ -113,7 +112,7 @@ function addTicker(event) {
                 </div>
 
                 <div class="enx"> 
-                        <button type="button" onclick="">Editar</button>
+                        <button type="button" onclick="openEditCard(event)">Editar</button>
                         <button type="button" onclick="deleteCard(event)">Excluir</button>    
                 </div>
     `
@@ -123,5 +122,22 @@ function addTicker(event) {
     cardlist += card
 
     document.querySelector('#cardcontainer').innerHTML = cardlist
-    openModal()
+    openModal('#add')
+}
+
+
+function editTicker(event) {
+    event.preventDefault()
+
+    
+}
+
+function openEditCard(event) {
+    console.log(event.target.closest('.card').querySelector('.cticker').innerText)
+    const selcard = event.target.closest('.card')
+
+    document.getElementById('editticker').value = selcard.querySelector('.cticker').innerText
+    
+    document.getElementById('editticker').value = selcard.querySelector('.cticker').innerText
+    openModal('#edit')
 }

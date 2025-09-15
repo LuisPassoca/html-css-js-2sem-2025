@@ -62,7 +62,7 @@
         <main>
             <div id="title">
                 <h1> Card Stock </h1>
-                <button onclick="openModal()">Adicionar um card</button>
+                <button onclick="openModal('#add')">Adicionar um card</button>
                 <!--
                 <div id="order">
                     <h4> Ordenar por: <span style="font-weight: 500;">maior valor total</span> </h4>
@@ -151,7 +151,7 @@
         
     </div>
 
-    <div class="modal">        
+    <div class="modal" id="add">        
         <main>
             <h1>Adicionar um card</h1>
             <form onsubmit="addTicker(event)">
@@ -175,7 +175,43 @@
                 <input type="text" id="ativos" name="ativos" placeholder="Digite a quantidade de ações...">
 
                 <div id="formbtn">
-                <button type="button" onclick="openModal()">Cancelar</button>
+                <button type="button" onclick="openModal('#add')">Cancelar</button>
+                <button style="background-color: var(--accent); color: white;"><b>Adicionar</b></button>
+                </div>      
+            </form>
+
+
+            
+        </main>
+
+        
+    </div>
+
+    <div class="modal" id="edit">        
+        <main>
+            <h1>Editar um card</h1>
+            <form onsubmit="editCard(event)">
+                <label for="editticker">Ticker:</label>
+                <input type="text" id="editticker" name="editticker" placeholder="Digite o nome da ação...">
+                
+                <label for="bolsa">Bolsa:</label>
+                <select id="bolsa" name="bolsa">
+                    <option value="null">- Selecione -</option>
+                    <option value="Nasdaq">Nasdaq</option>
+                    <option value="NYSE">NYSE</option>
+                </select>
+
+                <label for="valor">Valor inicial:</label>
+                <input type="text" id="valorini" name="valorini" placeholder="Digite um valor em USD...">
+
+                <label for="valor">Valor atual:</label>
+                <input type="text" id="valor" name="valor" placeholder="Digite um valor em USD...">
+
+                <label for="ativos">Ativos:</label>
+                <input type="text" id="ativos" name="ativos" placeholder="Digite a quantidade de ações...">
+
+                <div id="formbtn">
+                <button type="button" onclick="openModal('#edit')">Cancelar</button>
                 <button style="background-color: var(--accent); color: white;"><b>Adicionar</b></button>
                 </div>      
             </form>
