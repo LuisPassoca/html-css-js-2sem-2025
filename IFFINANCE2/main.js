@@ -101,14 +101,14 @@ function addTicker(event) {
                     </div>
 
                 <div class="cmid">
-                        <h1>Valor atual: <b style="color: ${color};">U$ ${valor} ${symbol}</b> </h1>
+                        <h1>Valor atual: <b style="color: ${color};">U$ <span class="cvalor">${valor}</span> ${symbol}</b> </h1>
 
-                        <h2>Valor inicial: U$${valorini}</h2>
+                        <h2>Valor inicial: U$<span class="cvalorini">${valorini}</span></h2>
                 </div>
 
                 <div class="cbot">
                         <h2>Total investido (qtd.):</h2>
-                        <h2>U$${total} (${ativos}x)</h2>
+                        <h2>U$<span class="ctotal">${total}</span> (<span class="cativos">${ativos}</span>x)</h2>
                 </div>
 
                 <div class="enx"> 
@@ -129,7 +129,7 @@ function addTicker(event) {
 function editTicker(event) {
     event.preventDefault()
 
-    
+
 }
 
 function openEditCard(event) {
@@ -137,7 +137,9 @@ function openEditCard(event) {
     const selcard = event.target.closest('.card')
 
     document.getElementById('editticker').value = selcard.querySelector('.cticker').innerText
+    document.getElementById('editvalorini').value = selcard.querySelector('.cvalorini').innerText
+    document.getElementById('editvalor').value = selcard.querySelector('.cvalor').innerText
+    document.getElementById('editativos').value = selcard.querySelector('.cativos').innerText
     
-    document.getElementById('editticker').value = selcard.querySelector('.cticker').innerText
     openModal('#edit')
 }

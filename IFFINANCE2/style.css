@@ -29,7 +29,7 @@ body {
     background-color: rgba(161, 161, 161, 0.767);
 
     button {
-
+        
         height: 20px;
     }
 }
@@ -194,6 +194,20 @@ main {
 .neutral {
     background-color: #292929;
 }
+
+#addCard {
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: var(--accent);
+    color: white;
+}
+
+#addCard:hover {
+        background-color: #417447;
+}
+
+
 
 
 
