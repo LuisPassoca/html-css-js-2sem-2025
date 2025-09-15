@@ -3,15 +3,17 @@ let opencards = 0
 
 function deleteCard(event) {
     event.target.closest('.card').remove()
+    opencards = 0
 }
 
 function showBTN(event) {
+    
     if (opencards == 0) {
-        document.querySelector('.enx').style.display = 'flex'
+        event.target.querySelector('.enx').style.display = 'flex'
         opencards = 1
     }
     else {
-        document.querySelector('.enx').style.display = 'none'
+        event.target.querySelector('.enx').style.display = 'none'
         opencards = 0
     }
 }
@@ -38,7 +40,7 @@ function addTicker(event) {
     const ativos = event.target.ativos.value
 
 
-
+    //Converte as casas decimais do número digitado e as adiciona caso não informadas
     valor = valor.replace(",", ".")
 
     if (valor.split(".")[1]?.length == 0) {
@@ -57,48 +59,30 @@ function addTicker(event) {
         valorini = Number(valorini).toFixed(2)
     }
 
+    //Define a cor do card e o símbolo de acordo com o valor
     let saldo = valor - valorini
+    let color = ""
+    let symbol = ""
 
     if (saldo > 0) {
         saldo = "positive"
-        var cardmid = `
-                    <div class="cmid">
-                        <h1>Valor atual: <b style="color: var(--accent);">U$  ${valor} ↑</b> </h1>
-
-                        <h2>Valor inicial: U$${valorini}</h2>
-                    </div>
-        `
+        color = "var(--accent)"
+        symbol = "↑"
     }
     else {
         if (saldo < 0) {
             saldo = "negative"
-            var cardmid = `
-                    <div class="cmid">
-                        <h1>Valor atual: <b style="color: #9e2f2f;">U$ ${valor} ↓</b> </h1>
-
-                        <h2>Valor inicial: U$${valorini}</h2>
-                    </div>
-        `
+            color = "#9e2f2f"
+            symbol = "↓"
+            
         }
         else {
             saldo = "neutral"
-            var cardmid = `
-                    <div class="cmid">
-                        <h1>Valor atual: <b>U$ ${valor} --</b> </h1>
-
-                        <h2>Valor inicial: U$${valorini}</h2>
-                    </div>
-        `
+            symbol = "--"
         }
     }
 
-
-
-
-
-
-
-
+    //Cálculo de ativos
     let total = Number(ativos) * valor
     total = total.toString()
 
@@ -109,40 +93,35 @@ function addTicker(event) {
         total = Number(total).toFixed(2)
     }
 
-
-
-
-
-    const cardtop = `
-                <div class="card">
+    //Define a estrutura do card
+    const card = `
+                <div class="card" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
                     <div class="ctop ${saldo}">
                         <h2>#1. ${ticker}</h2>
                             <h2> ${bolsa}</h2>
                     </div>
-`
 
-    const cardbot = `
-                    <div class="cbot">
+                <div class="cmid">
+                        <h1>Valor atual: <b style="color: ${color};">U$ ${valor} ${symbol}</b> </h1>
+
+                        <h2>Valor inicial: U$${valorini}</h2>
+                </div>
+
+                <div class="cbot">
                         <h2>Total investido (qtd.):</h2>
                         <h2>U$${total} (${ativos}x)</h2>
-                    </div>
+                </div>
 
+                <div class="enx"> 
+                        <button type="button" onclick="">Editar</button>
+                        <button type="button" onclick="deleteCard(event)">Excluir</button>    
                 </div>
     `
 
-    const card = cardtop + cardmid + cardbot
-
-    if (bolsa != "null") {
+    //Adiciona o card à lista e fecha o modal
     let cardlist = document.querySelector('#cardcontainer').innerHTML
     cardlist += card
 
     document.querySelector('#cardcontainer').innerHTML = cardlist
     openModal()
-    document.getElementById('adderror').style.display = 'none'
-    }
-
-    else {
-        document.getElementById('adderror').style.display = 'flex'
-    }
 }
-
