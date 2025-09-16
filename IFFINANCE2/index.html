@@ -80,71 +80,28 @@
 
 
             <div id="cardcontainer">
-                <!--
-                <div class="card">
+                <div class="card" id="4753" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
                     <div class="ctop positive">
-                        <h2>#1. APPL</h3>
-                            <h2>Nasdaq</h3>
+                        <h2>#1. <span class="cticker">MSFT</span></h2>
+                            <h2><span class="cbolsa">Nasdaq</span></h2>
                     </div>
 
                     <div class="cmid">
-                        <h1>Valor atual: <b style="color: var(--accent);">U$ 235.00 ↑</b> </h1>
+                            <h1>Valor atual: <b style="color: var(--accent);">U$ <span class="cvalor">110.00</span> <span class="symbol">↑</span></b> </h1>
 
-                        <h2>Valor inicial: U$200.00</h2>
+                            <h2>Valor inicial: U$<span class="cvalorini">100.00</span></h2>
                     </div>
 
                     <div class="cbot">
-                        <h2>Total investido (qtd.):</h2>
-                        <h2>U$2350.00 (10x)</h2>
+                            <h2>Total investido (qtd.):</h2>
+                            <h2>U$<span class="ctotal">1320.00</span> (<span class="cativos">12</span>x)</h2>
+                    </div>
+
+                    <div class="enx" style="display: none;"> 
+                            <button type="button" class="editbtn" onclick="openEditCard(event)">Editar</button>
+                            <button type="button" class="deletebtn" onclick="deleteCard(event)">Excluir</button>    
                     </div>
                 </div>
-                -->
-
-                <div class="card" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
-                    <div class="ctop negative">
-                        <h2>#2. MSFT</h3>
-                            <h2>NYSE</h3>
-                    </div>
-
-                    <div class="cmid">
-                        <h1>Valor atual: <b style="color: #9e2f2f;">U$ 199.00 ↓</b> </h1>
-
-                        <h2>Valor inicial: U$210.00</h2>
-                    </div>
-
-                    <div class="cbot">
-                        <h2>Total investido (qtd.):</h2>
-                        <h2>U$1990.00 (10x)</h2>
-                    </div>
-
-                    <div class="enx"> 
-                        <button type="button" onclick="">Editar</button>
-                        <button type="button" onclick="deleteCard(event)">Excluir</button>    
-                    </div>
-
-                </div>
-
-                <!--
-                <div class="card">
-                    <div class="ctop neutral">
-                        <h2>#3. GOOL</h3>
-                            <h2>Nasdaq</h3>
-                    </div>
-
-                    <div class="cmid">
-                        <h1>Valor atual: <b>U$ 180.00 --</b> </h1>
-
-                        <h2>Valor inicial: U$180.00</h2>
-                    </div>
-
-                    <div class="cbot">
-                        <h2>Total investido (qtd.):</h2>
-                        <h2>U$1800.00 (10x)</h2>
-                    </div>
-                </div>
-                -->
-                
-                
             </div>
             
         </main>

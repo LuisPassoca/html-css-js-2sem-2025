@@ -98,6 +98,7 @@ function addTicker(event) {
         idcard += 1
     }
 
+
     //Define a estrutura do card
     const card = `
                 <div class="card" id="${idcard}" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
@@ -107,7 +108,7 @@ function addTicker(event) {
                     </div>
 
                 <div class="cmid">
-                        <h1>Valor atual: <b style="color: ${color};">U$ <span class="cvalor">${valor}</span> ${symbol}</b> </h1>
+                        <h1>Valor atual: <b style="color: ${color};">U$ <span class="cvalor">${valor}</span> <span class="symbol">${symbol}</span></b> </h1>
 
                         <h2>Valor inicial: U$<span class="cvalorini">${valorini}</span></h2>
                 </div>
@@ -143,13 +144,39 @@ function editTicker(event) {
     event.preventDefault()
     const selcardbyid = document.getElementById(idcard.value)
 
-
-
+    //altera o texto dentro do card
     selcardbyid.querySelector('.cticker').innerText = document.getElementById('editticker').value
     selcardbyid.querySelector('.cbolsa').innerText = document.getElementById('editbolsa').value
     selcardbyid.querySelector('.cvalorini').innerText = document.getElementById('editvalorini').value
     selcardbyid.querySelector('.cvalor').innerText = document.getElementById('editvalor').value
     selcardbyid.querySelector('.cativos').innerText = document.getElementById('editativos').value
+
+    //calcula o saldo e altera a cor do card editado
+    let saldo = document.getElementById('editvalor').value - document.getElementById('editvalorini').value
+    if (saldo > 0) {
+        selcardbyid.querySelector('.ctop').classList.add('positive')
+        selcardbyid.querySelector('.ctop').classList.remove('negative')
+        selcardbyid.querySelector('.ctop').classList.remove('neutral')
+        selcardbyid.querySelector('.cmid b').style.color = 'var(--accent)'
+        selcardbyid.querySelector('.cmid .symbol').innerText = '↑'
+    }
+    else {
+        if (saldo < 0) {
+            selcardbyid.querySelector('.ctop').classList.add('negative')
+            selcardbyid.querySelector('.ctop').classList.remove('neutral')
+            selcardbyid.querySelector('.ctop').classList.remove('positive')
+            selcardbyid.querySelector('.cmid b').style.color = "#9e2f2f"
+            selcardbyid.querySelector('.cmid .symbol').innerText = "↓"
+        }
+        else {
+            selcardbyid.querySelector('.ctop').classList.add('neutral')
+            selcardbyid.querySelector('.ctop').classList.remove('negative')
+            selcardbyid.querySelector('.ctop').classList.remove('positive')
+            selcardbyid.querySelector('.cmid b').style.color = "black"
+            selcardbyid.querySelector('.cmid .symbol').innerText = "--"
+        }
+    }
+
 
     //Calculo do valor total e adição de casas decimais
     let total = Number(document.getElementById('editativos').value) * document.getElementById('editvalor').value
