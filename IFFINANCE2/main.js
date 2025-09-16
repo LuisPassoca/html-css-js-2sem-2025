@@ -93,7 +93,7 @@ function addTicker(event) {
     }
 
     //Dá um ID aleatório pro card e adiciona 1 caso esse ID já exista
-    let idcard = 1 //Math.floor(Math.random() * 10000)
+    let idcard = Math.floor(Math.random() * 10000)
     while (document.getElementById(idcard)) {
         idcard += 1
     }
