@@ -92,12 +92,18 @@ function addTicker(event) {
         total = Number(total).toFixed(2)
     }
 
+    //Dá um ID aleatório pro card e adiciona 1 caso esse ID já exista
+    let idcard = 1 //Math.floor(Math.random() * 10000)
+    while (document.getElementById(idcard)) {
+        idcard += 1
+    }
+
     //Define a estrutura do card
     const card = `
-                <div class="card" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
+                <div class="card" id="${idcard}" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
                     <div class="ctop ${saldo}">
                         <h2>#1. <span class="cticker">${ticker}</span></h2>
-                            <h2> ${bolsa}</h2>
+                            <h2><span class="cbolsa">${bolsa}</span></h2>
                     </div>
 
                 <div class="cmid">
@@ -123,23 +129,56 @@ function addTicker(event) {
 
     document.querySelector('#cardcontainer').innerHTML = cardlist
     openModal('#add')
+
+    //Reseta o formulário de enviar o card
+    document.getElementById('ticker').value = ""
+    document.getElementById('bolsa').value = "null"
+    document.getElementById('valorini').value = ""
+    document.getElementById('valor').value = ""
+    document.getElementById('ativos').value = ""
 }
 
 
 function editTicker(event) {
     event.preventDefault()
+    const selcardbyid = document.getElementById(idcard.value)
 
 
+
+    selcardbyid.querySelector('.cticker').innerText = document.getElementById('editticker').value
+    selcardbyid.querySelector('.cbolsa').innerText = document.getElementById('editbolsa').value
+    selcardbyid.querySelector('.cvalorini').innerText = document.getElementById('editvalorini').value
+    selcardbyid.querySelector('.cvalor').innerText = document.getElementById('editvalor').value
+    selcardbyid.querySelector('.cativos').innerText = document.getElementById('editativos').value
+
+    //Calculo do valor total e adição de casas decimais
+    let total = Number(document.getElementById('editativos').value) * document.getElementById('editvalor').value
+    total = total.toString()
+
+    if (total.split(".")[1]?.length == 0) {
+        total += ".00"
+    }
+    else {
+        total = Number(total).toFixed(2)
+    }
+
+    selcardbyid.querySelector('.ctotal').innerText = total
+    
+
+    openModal('#edit')
 }
 
 function openEditCard(event) {
-    console.log(event.target.closest('.card').querySelector('.cticker').innerText)
     const selcard = event.target.closest('.card')
 
+    document.getElementById('idcard').value = selcard.id
     document.getElementById('editticker').value = selcard.querySelector('.cticker').innerText
+    document.getElementById('editbolsa').value = selcard.querySelector('.cbolsa').innerText
     document.getElementById('editvalorini').value = selcard.querySelector('.cvalorini').innerText
     document.getElementById('editvalor').value = selcard.querySelector('.cvalor').innerText
     document.getElementById('editativos').value = selcard.querySelector('.cativos').innerText
     
+
+    console.log(idcard.value)
     openModal('#edit')
 }
