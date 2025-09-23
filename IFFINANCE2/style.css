@@ -37,12 +37,12 @@ body {
     }
 
     .editbtn {
-            background-color: #585858;
+            background-color: #353535;
             color: white;
 
     }
     .deletebtn {
-            background-color: #9b0000;
+            background-color: #a51111;
             color: white;
     }
 }

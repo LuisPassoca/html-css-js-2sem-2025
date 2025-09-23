@@ -4,6 +4,16 @@ let opencards = 0
 function deleteCard(event) {
     event.target.closest('.card').remove()
     opencards = 0
+    checkCards()
+}
+
+function checkCards() {
+    if (document.querySelectorAll('.card').length == 0) {
+        document.getElementById('nocards').style.display = 'flex'
+    }
+    else {
+        document.getElementById('nocards').style.display = 'none'
+    }
 }
 
 function showBTN(event) { 
@@ -118,9 +128,9 @@ function addTicker(event) {
                         <h2>U$<span class="ctotal">${total}</span> (<span class="cativos">${ativos}</span>x)</h2>
                 </div>
 
-                <div class="enx"> 
-                        <button type="button" onclick="openEditCard(event)">Editar</button>
-                        <button type="button" onclick="deleteCard(event)">Excluir</button>    
+                <div class="enx" style="display: none;"> 
+                            <button type="button" class="editbtn" onclick="openEditCard(event)">Editar</button>
+                            <button type="button" class="deletebtn" onclick="deleteCard(event)">Excluir</button>    
                 </div>
     `
 
@@ -137,6 +147,7 @@ function addTicker(event) {
     document.getElementById('valorini').value = ""
     document.getElementById('valor').value = ""
     document.getElementById('ativos').value = ""
+    checkCards()
 }
 
 

@@ -42,148 +42,27 @@
                 <h1><span style="color: var(--accent);">IF</span>Finance</h1>
             </div>
             <ul>
-                <li class="active"><a>Home</a></li>
-                <li><a href="about.html">Quem Somos</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a>Quem Somos</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
         </div>
     </header>
 
     <div class="wrapper main">
-        <aside>
-            <h3>Dashboard</h3>
-            <ul>
-                <li class="active"><a href="#">Card Stock</a></li>
-                <li><a href="#">Opt. 2</a></li>
-                <li><a href="https://www.instagram.com/p/DMk7VYKq8EE/">Ronaldo</a></li>
-            </ul>
-        </aside>
-
         <main>
-            <div id="title">
-                <h1> Card Stock </h1>
-                <button id="addCard" onclick="openModal('#add')">Adicionar um card</button>
-                <!--
-                <div id="order">
-                    <h4> Ordenar por: <span style="font-weight: 500;">maior valor total</span> </h4>
-                    <svg width="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </g>
-                    </svg>
-                </div>
-                -->
-            </div>
-
-
-            <div id="cardcontainer">
-                <div id="nocards" style="display: none;">
-                    <p>Ops, parece que você não tem nenhum card!</p>
-                </div>
-
-                <div class="card" id="4753" onmouseleave="showBTN(event)" onmouseenter="showBTN(event)">
-                    <div class="ctop positive">
-                        <h2>#1. <span class="cticker">MSFT</span></h2>
-                            <h2><span class="cbolsa">Nasdaq</span></h2>
-                    </div>
-
-                    <div class="cmid">
-                            <h1>Valor atual: <b style="color: var(--accent);">U$ <span class="cvalor">110.00</span> <span class="symbol">↑</span></b> </h1>
-
-                            <h2>Valor inicial: U$<span class="cvalorini">100.00</span></h2>
-                    </div>
-
-                    <div class="cbot">
-                            <h2>Total investido (qtd.):</h2>
-                            <h2>U$<span class="ctotal">1320.00</span> (<span class="cativos">12</span>x)</h2>
-                    </div>
-
-                    <div class="enx" style="display: none;"> 
-                            <button type="button" class="editbtn" onclick="openEditCard(event)">Editar</button>
-                            <button type="button" class="deletebtn" onclick="deleteCard(event)">Excluir</button>    
-                    </div>
-                </div>
-            </div>
-            
-        </main>
-        
-    </div>
-
-    <div class="modal" id="add">        
-        <main>
-            <h1>Adicionar um card</h1>
-            <form onsubmit="addTicker(event)">
-                <label for="ticker">Ticker:</label>
-                <input type="text" id="ticker" name="ticker" placeholder="Digite o nome da ação...">
+            <h1>Bolsas em que atuamos</h1>
+            <table>
+                <tr>
+                    
+                <tr>
+                <tr>
                 
-                <label for="bolsa">Bolsa:</label>
-                <select id="bolsa" name="bolsa">
-                    <option value="null">- Selecione -</option>
-                    <option value="Nasdaq">Nasdaq</option>
-                    <option value="NYSE">NYSE</option>
-                </select>
-
-                <label for="valor">Valor inicial:</label>
-                <input type="text" id="valorini" name="valorini" placeholder="Digite um valor em USD...">
-
-                <label for="valor">Valor atual:</label>
-                <input type="text" id="valor" name="valor" placeholder="Digite um valor em USD...">
-
-                <label for="ativos">Ativos:</label>
-                <input type="text" id="ativos" name="ativos" placeholder="Digite a quantidade de ações...">
-
-                <div id="formbtn">
-                <button type="button" onclick="openModal('#add')">Cancelar</button>
-                <button style="background-color: var(--accent); color: white;"><b>Adicionar</b></button>
-                </div>      
-            </form>
-
-
-            
+                </tr>
+            </table>
         </main>
-
-        
-    </div>
-
-    <div class="modal" id="edit">        
-        <main>
-            <h1>Editar um card</h1>
-            <form onsubmit="editTicker(event)">
-                <input type="hidden" id="idcard" name="idcard">
-                <label for="editticker">Ticker:</label>
-                <input type="text" id="editticker" name="editticker" placeholder="Digite o nome da ação...">
-                
-                <label for="editbolsa">Bolsa:</label>
-                <select id="editbolsa" name="editbolsa">
-                    <option value="null">- Selecione -</option>
-                    <option value="Nasdaq">Nasdaq</option>
-                    <option value="NYSE">NYSE</option>
-                </select>
-
-                <label for="editvalorini">Valor inicial:</label>
-                <input type="text" id="editvalorini" name="editvalorini" placeholder="Digite um valor em USD...">
-
-                <label for="editvalor">Valor atual:</label>
-                <input type="text" id="editvalor" name="editvalor" placeholder="Digite um valor em USD...">
-
-                <label for="editativos">Ativos:</label>
-                <input type="text" id="editativos" name="editativos" placeholder="Digite a quantidade de ações...">
-
-                <div id="formbtn">
-                <button type="button" onclick="openModal('#edit')">Cancelar</button>
-                <button style="background-color: var(--accent); color: white;"><b>Editar</b></button>
-                </div>      
-            </form>
-
-
-            
-        </main>
-
-        
-    </div>
+    </div>    
+    
     
 
     <footer>
@@ -217,8 +96,6 @@
     </footer>
 
 </body>
-
-<script src="/IFFINANCE2/main.js"></script>
 
 
 </html>
